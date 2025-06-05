@@ -53,30 +53,30 @@ activities = {
         "participants": ["liam@mergington.edu", "ava@mergington.edu"]
     },
     # Artistic activities
-    "Drama Club": {
-        "description": "Participate in school plays and improve acting skills",
-        "schedule": "Mondays, 4:00 PM - 5:30 PM",
-        "max_participants": 25,
-        "participants": ["noah@mergington.edu", "isabella@mergington.edu"]
+    "Art Club": {
+        "description": "Explore painting, drawing, and other visual arts",
+        "schedule": "Mondays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": ["ella@mergington.edu", "noah@mergington.edu"]
     },
-    "Art Workshop": {
-        "description": "Explore painting, drawing, and sculpture techniques",
-        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+    "Drama Society": {
+        "description": "Participate in acting, stage production, and theater games",
+        "schedule": "Fridays, 4:00 PM - 5:30 PM",
         "max_participants": 20,
-        "participants": ["amelia@mergington.edu", "benjamin@mergington.edu"]
+        "participants": ["amelia@mergington.edu", "jack@mergington.edu"]
     },
     # Intellectual activities
     "Math Olympiad": {
         "description": "Prepare for math competitions and solve challenging problems",
-        "schedule": "Fridays, 2:00 PM - 3:30 PM",
-        "max_participants": 16,
-        "participants": ["charlotte@mergington.edu", "elijah@mergington.edu"]
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 10,
+        "participants": ["ethan@mergington.edu", "grace@mergington.edu"]
     },
-    "Debate Team": {
+    "Debate Club": {
         "description": "Develop public speaking and argumentation skills",
         "schedule": "Wednesdays, 4:00 PM - 5:30 PM",
         "max_participants": 14,
-        "participants": ["james@mergington.edu", "harper@mergington.edu"]
+        "participants": ["charlotte@mergington.edu", "benjamin@mergington.edu"]
     }
 }
 
@@ -103,6 +103,7 @@ def signup_for_activity(activity_name: str, email: str):
 # Validate student is not already signed up
     if email in activity["participants"]:
         raise HTTPException(status_code=400, detail="Student already signed up")
+    
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
